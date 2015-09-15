@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+	<script src="velocity.min.js"></script>
+	<script src="velocity.ui.min.js"></script>
+	<style>
+		.box{
+			width:100px;
+			height:100px;
+			background-color: #000;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box1"></div>
+	<div class="box" id="box2"></div>
+	<div class="box" id="box3"></div>
+	<script>
+		(function($){
+			/*$('#box1').velocity({
+				width:50,
+				height:100
+			},{
+				duration:3000,
+				delay:300
+			});*/
+			var seq = [
+				{
+					elements:$("#box1"),
+					properties:{width:'300px'},
+					options:{duration:3000}
+				},{
+					elements:$("#box2"),
+					properties:{width:'300px'},
+					options:{duration:3000}
+				},{
+					elements:$("#box3"),
+					properties:{width:'300px'},
+					options:{duration:3000}
+				}
+			];
+			$.Velocity.RunSequence(seq);
+		})(jQuery);
+	</script>
+</body>
+</html>
